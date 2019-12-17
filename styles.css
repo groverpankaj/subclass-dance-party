@@ -3,6 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
+  /* background-color:#444; */
   background-color:#444;
   font-size: 18px;
 }
@@ -24,4 +25,24 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.boy{
+  height: 100px;
+  width: 100px;
+  background-image: url("assets/sponge2.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:  center center;
+  border: 0px;
+}
+
+.girl{
+  height: 100px;
+  width: 100px;
+  background-image: url("assets/patrick2.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:  center center;
+  border: 0px;
 }
