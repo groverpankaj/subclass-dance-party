@@ -40,7 +40,7 @@ $(document).ready(function() {
       var dancer = new dancerMakerFunction(
         dancerOneX,
         dancerOneY,
-        Math.random() * 5000
+        Math.random() * 1000
       );
 
       dancerOneX += 150;
@@ -91,7 +91,7 @@ $(document).ready(function() {
       var dancer = new dancerMakerFunction(
         dancerTwoX,
         dancerTwoY,
-        Math.random() * 5000
+        Math.random() * 1000
       );
 
       dancerTwoX += 150;
@@ -105,27 +105,46 @@ $(document).ready(function() {
   });
 
   let linePosX = bodyHeight / 2;
-  let linePosY = 100;
+  let linePosY = bodyWidth / 2 ;
   // let linePosY = bodyWidth / 2;
 
   $('#lineUp').on('click', function(event) {
+    let step = 0;
     for (let i = 0; i < dancers.length; i++) {
-      // let temp = linePosY + linePosY *  (-1)**i * i;
-      dancers[i].lineUp.call(dancers[i], linePosX, linePosY);
-      linePosY += 150;
+      if ( i % 2 !== 0) { step += 150; }
+      if ( i % 2 !== 0) { nextStep = -step; } else {nextStep = step;}
+      dancers[i].lineUp.call(dancers[i], linePosX, linePosY - nextStep);
+      // console.log(step, nextStep);
+      // linePosY += 150;
     }
     linePosY = bodyHeight / 2;
   });
 
   let addHoverOnDancers = function() {
 
-    $('.dancer').hover(function(eve) {
+    $('.dancer').mouseover(function(eve) {
       //eve.css({'display': 'none'});
-      $(this).css({'border': '2px solid #ffffff', 'width': '150px', 'height': '150px'});
+      $(this).css({'width': '170px', 'height': '170px'});
+
+
+      setTimeout(function() {
+        //your code to be executed after 1 second
+        $(this).css({'width': '100px', 'height': '100px'});
+      }.bind(this), 300);
 
 
     });
   };
+
+  $('#interact').on('click', function(event) {
+    for (let i = 0; i < dancers.length; i++) {
+      if (dancers[i] instanceof makeBlinkyDancer) {
+        $(dancers[i].$node).animate({'left': ((bodyWidth / 2) - 30) + 'px'}, 5000);
+      } else {
+        $(dancers[i].$node).animate({'left': ((bodyWidth / 2) + 30) + 'px'}, 5000);
+      }
+    }
+  });
 
 });
 
