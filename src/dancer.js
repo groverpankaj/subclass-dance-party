@@ -7,6 +7,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeStep = timeBetweenSteps;
 
   //this.step();
+  // debugger;
   this.stepFunc = this.step.bind(this);
   this.stepFunc();
 
