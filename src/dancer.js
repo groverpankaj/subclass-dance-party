@@ -6,10 +6,9 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   this.timeStep = timeBetweenSteps;
 
-  //this.step();
-  // debugger;
-  this.stepFunc = this.step.bind(this);
-  this.stepFunc();
+  // this.stepFunc = this.step.bind(this);
+  // this.stepFunc();
+  this.step();
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
@@ -22,7 +21,8 @@ makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   // console.log(this);
-  setTimeout(this.stepFunc, this.timeStep);
+  var context = this;
+  setTimeout(function() {context.step();}, this.timeStep);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
