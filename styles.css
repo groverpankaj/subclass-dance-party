@@ -4,7 +4,10 @@ body, html{
 body{
   margin: 0px;
   /* background-color:#444; */
-  background-color:#444;
+  /* background-color:#444; */
+  background-image: url("assets/bbb.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -31,7 +34,7 @@ body, a:link, a:visited, a:active{
   height: 100px;
   width: 100px;
   background-image: url("assets/sponge2.gif");
-  background-repeat: no-repeat;
+  /* ssbackground-repeat: no-repeat; */
   background-size: cover;
   background-position:  center center;
   border: 0px;
@@ -41,6 +44,16 @@ body, a:link, a:visited, a:active{
   height: 100px;
   width: 100px;
   background-image: url("assets/patrick2.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:  center center;
+  border: 0px;
+}
+
+.patty{
+  height: 60px;
+  width: 60px;
+  background-image: url("assets/krabbypatty.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position:  center center;
