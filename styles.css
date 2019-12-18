@@ -12,17 +12,31 @@ body{
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
-}
-.title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
-}
-.topbar{
-  height:32px;
-  background-color: #555;
+  color: #000000;
 }
 .title{
-  background-color: #777;
+  padding:5px 12px;
+  /* float:right; */
+}
+
+
+.topbar{
+  height:55px;
+  background-color: #555;
+  background-color: #3285d1;
+}
+
+.addDancerButton {
+  display: inline-block;
+  padding: 15px 10px 0px 10px;
+  height: 40px;
+  text-decoration: none;
+}
+
+.title{
+  /* background-color: #777; */
+  color: #ffffff;
+  font-weight: bold;
 }
 .dancer{
   border:10px solid red;
@@ -58,4 +72,31 @@ body, a:link, a:visited, a:active{
   background-size: cover;
   background-position:  center center;
   border: 0px;
+}
+
+#addSecondButton {
+  border-left: 1px solid #ffffff;
+  background-color: pink;
+}
+
+#addDancerButton {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: yellow;
+}
+
+#addPattyButton, #lineUp {
+  border-left: 1px solid #ffffff;
+  background-color: #a4a2e1;
+}
+
+#interact {
+  border-left: 1px solid #ffffff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #a4a2e1;
+}
+
+.addDancerButton:hover {
+  opacity: 0.70;
 }
